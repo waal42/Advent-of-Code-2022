@@ -1,5 +1,6 @@
 from functions import lines, timer
 
+
 @timer
 def load_data(file):
     return lines(file)

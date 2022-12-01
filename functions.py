@@ -2,10 +2,10 @@ import functools
 from time import perf_counter
 import functools
 
+
 def comma_separated_line(filename):
     with open(filename, "r") as file_in:
-        out = [x for x in file_in.read().strip("\n").split(", ")    ]
-    return out
+        return [x for x in file_in.read().strip("\n").split(", ")]
 
 
 def timer(func):
@@ -23,5 +23,9 @@ def timer(func):
 
 def lines(filename):
     with open(filename, "r") as file_in:
-        out = [line for line in file_in.read().split("\n")]
-    return out
+        return [line for line in file_in.read().split("\n")]
+
+
+def blocks_of_lines(filename):
+    with open(filename, "r") as file_in:
+        return [line.split("\n") for line in file_in.read().split("\n\n")]
