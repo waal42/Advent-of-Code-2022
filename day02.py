@@ -25,7 +25,7 @@ def star_one(matches):
 def star_two(matches):
     score = 0
     shapes = ["A", "B", "C"]
-    match_scores = {"X":0, "Y":3, "Z":6}
+    match_scores = {"X": 0, "Y": 3, "Z": 6}
     for [shape, ending] in matches:
         score += match_scores[ending]
         if ending == "Z":
@@ -35,6 +35,7 @@ def star_two(matches):
         else:
             score += (shapes.index(shape) - 1) % 3 + 1
     return score
+
 
 @timer
 def main():

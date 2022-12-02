@@ -20,7 +20,6 @@ def comma_separated_line(filename):
         return list(file_in.read().strip("\n").split(", "))
 
 
-
 def lines(filename):
     with open(filename, "r", encoding="utf-8") as file_in:
         return list(file_in.read().split("\n"))
