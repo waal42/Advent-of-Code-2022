@@ -1,15 +1,9 @@
 import functools
 from time import perf_counter
-import functools
-
-
-def comma_separated_line(filename):
-    with open(filename, "r") as file_in:
-        return [x for x in file_in.read().strip("\n").split(", ")]
 
 
 def timer(func):
-    """courtesy of filakrad"""
+    """- courtesy of filakrad"""
     @functools.wraps(func)
     def wrapper_timer(*args, **kwargs):
         start_time = perf_counter()
@@ -21,11 +15,22 @@ def timer(func):
     return wrapper_timer
 
 
+def comma_separated_line(filename):
+    with open(filename, "r", encoding="utf-8") as file_in:
+        return list(file_in.read().strip("\n").split(", "))
+
+
+
 def lines(filename):
-    with open(filename, "r") as file_in:
-        return [line for line in file_in.read().split("\n")]
+    with open(filename, "r", encoding="utf-8") as file_in:
+        return list(file_in.read().split("\n"))
 
 
 def blocks_of_lines(filename):
-    with open(filename, "r") as file_in:
+    with open(filename, "r", encoding="utf-8") as file_in:
         return [line.split("\n") for line in file_in.read().split("\n\n")]
+
+
+def tuples(filename):
+    with open(filename, "r", encoding="utf-8") as file_in:
+        return [tuple.split(" ") for tuple in file_in.read().split("\n")]
