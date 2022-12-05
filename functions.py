@@ -32,4 +32,4 @@ def blocks_of_lines(filename):
 
 def tuples(filename):
     with open(filename, "r", encoding="utf-8") as file_in:
-        return [tuple.split(" ") for tuple in file_in.read().split("\n")]
+        return [tuple.split() for tuple in file_in.read().split("\n")]
