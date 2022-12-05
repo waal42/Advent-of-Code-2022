@@ -39,5 +39,6 @@ def comma_separated_ranges(filename):
     with open(filename, "r", encoding="utf-8") as file_in:
         data_out = list()
         for tuple in file_in.read().split("\n"):
-            data_out.append([list(map(int,(range.split("-")))) for range in tuple.split(",")])
+            data_out.append([list(map(int, (range.split("-"))))
+                            for range in tuple.split(",")])
         return data_out
