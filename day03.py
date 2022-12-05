@@ -41,6 +41,7 @@ def star_two(rucksacks):
                 break
     return sum(badges)
 
+
 @timer
 def main():
     # data = []
